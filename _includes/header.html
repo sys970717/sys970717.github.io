@@ -4,14 +4,13 @@
 
     <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
     
+    <div class="header-badge">
+      <a href="{{ site.baseurl }}/">
+          <img src="/jekyll-wing-template/assets/headshot.jpg" />
+      </a>
+    </div>
   </div>
 
-  <div class="header-badge">
-    <a href="{{ site.baseurl }}/">
-        <img src="/jekyll-wing-template/assets/headshot.jpg" />
-    </a>
-  </div>
-  
   <ul>
     {% assign pages_list = site.pages %}
     {% for node in pages_list %}
