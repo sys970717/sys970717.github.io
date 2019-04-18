@@ -6,12 +6,8 @@ categories: [spring]
 ---
 ## Custom Login 페이지 만들기
  
- `alt("Spring security 공식문서는 (  ) URL을 참고해주세요.")`
+ `alt("Spring security 공식문서는 (  ) URL을 참고하시기 바랍니다.")`
 
 Gradle을 사용하여 개발을 진행하기 때문에 
 
-<div>
 compile("org.springframework.boot:spring-boot-starter-security")
-</div>
-
- 
