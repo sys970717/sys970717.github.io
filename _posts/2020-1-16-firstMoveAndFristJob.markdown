@@ -39,9 +39,16 @@ __puppeteer__ 라이브러리는 사실 프론트엔드 테스팅을 목적으�
 
 일반적인 리눅스라고 생각하고 덤볐다가 2일동안 puppeteer에게 데였습니다. 일반적인 리눅스면 잘 될거라고 생각하고 실행 했는데 *OMG...* 
   배포는 `codePipeline` 이고 그래서 별로 신경쓰지 않았는데 `puppeteer, headless chrome` 을 설치하지 못하는 크나큰 상황에 구글링 해가며 개발서버에 `yum.. yum..`  했는데 반영엔 어려움을 겪었습니다. ~~( 사실 다 권한 문제인건 쉿쉿 )~~
+```bash
+$ curl https://intoli.com/install-google-chrome.sh | bash
+$ vi /etc/yum.repos.d/google-chrome.repo
+$ yum install google-chrome
+```
 
-`curl https://intoli.com/install-google-chrome.sh | bash`
-`vi /etc/yum.repos.d/google-chrome.repo`
-`yum install google-chrome`
+위 명령어를 사용하여 크롬 드라이버를 설치 후 처리하려 했는데 ~~이번엔 `EACCES` 를 만나서 CTO 님에게 `help.. help...` 한 상황입니다.~~
 
-위 명령어를 사용해서 우선적으로 크롬 드라이버를 설치해서 처리하려 했는데 이번엔 `EACCES` 를 만나서 CTO 님에게 `help.. help...` 한 상황입니다.
+2020-01-21
+---
+드디어 해결했습니다. chrome driver 설치했던것을 ELB (Elastic Beanstalk) 의 환경변수 속성 중 PUPPETEER_EXECUTABLE_PATH 프로퍼티 값을 google-chrome-stable 로 세팅하여 상황 종료! 이것으로 이제 운영반영을 할 수 있게 되었습니다.. 
+
+후.. 정말 너무나도 어려웠던 AWS beanstalk + codePipeline ,, 이번 덕분에 많은 것을 경험해보고 pipeline 동작 방식도 찾아보게됐네요.. 하하핳 잘됐다 잘됐어!! 그럼 이제 글을 마치도록 하겠습니다!!
