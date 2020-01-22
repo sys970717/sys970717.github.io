@@ -2,7 +2,7 @@
 layout: post
 title:  "첫 이직 그리고 첫 업무"
 date:   2020-01-16 16:27:00 +0900
-categories: [spring]
+categories: [Node, 업무, WEB]
 ---
 >12월 9일에 두번째 회사에 입사했습니다!!!!! Node 실무의 첫 경험.. 열심히 해보기로 하고 입사를 진행했죠!!
 >입사하기 전에 node 와 typescript 를 이용해 백엔드를 개발하는 사이드 프로젝트를 진행했고, 아직도 진행중입니다 ( ~~입사하고 나니 갑자기 열정이 후두두둑 떨어진건 안비밀~~ )
@@ -46,6 +46,14 @@ npm install puppeteer --unsafe-pem
 ```bash
 $ curl https://intoli.com/install-google-chrome.sh | bash
 $ vi /etc/yum.repos.d/google-chrome.repo
+---
+[google-chrome]
+name=google-chrome
+baseurl=http://dl.google.com/linux/chrome/rpm/stable/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://dl-ssl.google.com/linux/linux_signing_key.pub
+---
 $ yum install google-chrome
 ```
 
